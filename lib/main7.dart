@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-void main() {
+void main7() {
   runApp(MyApp());
 }
 
@@ -1180,9 +1180,9 @@ class ShapePainter1 extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // final center1 = Offset(size.width / 2, size.height / 2);
     // var center1 = const Offset(0, 220); // 最初のオフセット値
-    var center1 = const Offset(0, 220 - 30); // 表面の中心座標
-    var center2 = const Offset(-90, 500 - 60); // 本質の中心座標
-    const radius1 = 170.0 - 30.0;
+    var center1 = const Offset(0, 220); // 表面の中心座標
+    var center2 = const Offset(-90, 500); // 本質の中心座標
+    const radius1 = 170.0;
     const radius2 = 50.0;
     const lineLength1 = 200.0;
     const lineLength2 = 84.0;
@@ -1229,37 +1229,39 @@ class ShapePainter1 extends CustomPainter {
     final line22 = center2 +
         Offset(lineLength2 * cos(radian2), lineLength2 * sin(radian2));
     final centerMoku1 =
-        center1 + Offset(113 * cos(radianMoku), 113 * sin(radianMoku));
+        center1 + Offset(140 * cos(radianMoku), 140 * sin(radianMoku));
     final centerMoku2 =
-        center1 + Offset(59 * cos(radianMoku), 59 * sin(radianMoku));
+        center1 + Offset(80 * cos(radianMoku), 80 * sin(radianMoku));
     final centerKa1 =
-        center1 + Offset(113 * cos(radianKa), 113 * sin(radianKa));
-    final centerKa2 = center1 + Offset(59 * cos(radianKa), 59 * sin(radianKa));
+        center1 + Offset(140 * cos(radianKa), 140 * sin(radianKa));
+    final centerKa2 = center1 + Offset(80 * cos(radianKa), 80 * sin(radianKa));
     final centerDo1 =
-        center1 + Offset(113 * cos(radianDo), 113 * sin(radianDo));
-    final centerDo2 = center1 + Offset(59 * cos(radianDo), 59 * sin(radianDo));
+        center1 + Offset(140 * cos(radianDo), 140 * sin(radianDo));
+    final centerDo2 = center1 + Offset(80 * cos(radianDo), 80 * sin(radianDo));
     final centerKin1 =
-        center1 + Offset(113 * cos(radianKin), 113 * sin(radianKin));
+        center1 + Offset(140 * cos(radianKin), 140 * sin(radianKin));
     final centerKin2 =
-        center1 + Offset(59 * cos(radianKin), 59 * sin(radianKin));
+        center1 + Offset(80 * cos(radianKin), 80 * sin(radianKin));
     final centerSui1 =
-        center1 + Offset(113 * cos(radianSui), 113 * sin(radianSui));
+        center1 + Offset(140 * cos(radianSui), 140 * sin(radianSui));
     final centerSui2 =
-        center1 + Offset(59 * cos(radianSui), 59 * sin(radianSui));
+        center1 + Offset(80 * cos(radianSui), 80 * sin(radianSui));
 
-    canvas.drawCircle(center1, 140, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(center1, 86, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(center1, 32, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerMoku1, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerMoku2, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKa1, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKa2, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerDo1, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerDo2, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKin1, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKin2, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSui1, 27, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSui2, 27, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(center1, radius1, penBlue..style = PaintingStyle.stroke);
+    // canvas.drawCircle(
+    //     center1, radius1 - 60, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(
+        center1, radius1 - 120, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerMoku1, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerMoku2, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerKa1, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerKa2, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerDo1, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerDo2, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerKin1, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerKin2, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerSui1, 30, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerSui2, 30, penBlue..style = PaintingStyle.stroke);
 
     // canvas.drawLine(center1, line0, penRed); // 赤い中心線
     canvas.drawLine(center1, line1, penWhite);
