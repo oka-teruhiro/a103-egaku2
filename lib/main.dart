@@ -56,11 +56,11 @@ class MyApp extends StatelessWidget {
     const int godUColor3 = -200000000; // 金地下1階色
     const int godUColor4 = -200000000; // 水地下1階色
     // 天が与える運勢の数の表示色
-    const int tuGColor0 = c1; // 木3階色
-    const int tuGColor1 = c1; // 火3階色
-    const int tuGColor2 = c1; // 土3階色
-    const int tuGColor3 = c1; // 金3階色
-    const int tuGColor4 = c1; // 水3階色
+    const int tuGColor0 = c2; // 木3階色
+    const int tuGColor1 = c2; // 火3階色
+    const int tuGColor2 = c2; // 土3階色
+    const int tuGColor3 = c2; // 金3階色
+    const int tuGColor4 = c2; // 水3階色
     // 通変星の数の表示色
     const int tuColor0 = -200000000; // 木２階色
     const int tuColor1 = -200000000; // 木１階色
@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('命式チャート'),
+          title: const Text('命式チャートver.1.0.3'),
         ),
         body: Container(
           color: Colors.black,
@@ -99,6 +99,15 @@ class MyApp extends StatelessWidget {
                   // size: const Size(400, 400),
                 ),
                 //　■■■■■■■■■ 1行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: const [
+                //     SizedBox(
+                //       width: w1 * 9,
+                //       height: 160,
+                //     ),
+                //   ],
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -844,10 +853,14 @@ class MyApp extends StatelessWidget {
 class ShapePainter1 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // final center = Offset(size.width / 2, size.height / 2);
-    var center = const Offset(0, 220);
-    const radius = 170.0;
-    const lineLength = 200.0;
+    // final center1 = Offset(size.width / 2, size.height / 2);
+    // var center1 = const Offset(0, 220); // 最初のオフセット値
+    var center1 = const Offset(0, 220); // 表面の中心座標
+    var center2 = const Offset(-90, 500); // 本質の中心座標
+    const radius1 = 170.0;
+    const radius2 = 50.0;
+    const lineLength1 = 200.0;
+    const lineLength2 = 100.0;
 
     const lineAngle = 72.0;
 
@@ -863,7 +876,7 @@ class ShapePainter1 extends CustomPainter {
       ..color = Colors.blue
       ..strokeWidth = 2.0;
 
-    int gogyou = 2; // 五行　0:木 1:火 2:土 3:金 4:水
+    int gogyou = 0; // 五行　0:木 1:火 2:土 3:金 4:水
     double angleMoku = 72 * 0 - 90;
     double angleKa = 72 * 1 - 90;
     double angleDo = 72 * 2 - 90;
@@ -878,34 +891,42 @@ class ShapePainter1 extends CustomPainter {
     double radian1 = ((72 * gogyou) - 90 - 36) / 180 * pi;
     double radian2 = ((72 * gogyou) - 90 + 36) / 180 * pi;
 
-    final line0 =
-        center + Offset(lineLength * cos(radian0), lineLength * sin(radian0));
-    final line1 =
-        center + Offset(lineLength * cos(radian1), lineLength * sin(radian1));
-    final line2 =
-        center + Offset(lineLength * cos(radian2), lineLength * sin(radian2));
+    final line0 = center1 +
+        Offset(lineLength1 * cos(radian0), lineLength1 * sin(radian0));
+    final line1 = center1 +
+        Offset(lineLength1 * cos(radian1), lineLength1 * sin(radian1));
+    final line2 = center1 +
+        Offset(lineLength1 * cos(radian2), lineLength1 * sin(radian2));
+    final line20 = center2 +
+        Offset(lineLength2 * cos(radian0), lineLength2 * sin(radian0));
+    final line21 = center2 +
+        Offset(lineLength2 * cos(radian1), lineLength2 * sin(radian1));
+    final line22 = center2 +
+        Offset(lineLength2 * cos(radian2), lineLength2 * sin(radian2));
     final centerMoku1 =
-        center + Offset(140 * cos(radianMoku), 140 * sin(radianMoku));
+        center1 + Offset(140 * cos(radianMoku), 140 * sin(radianMoku));
     final centerMoku2 =
-        center + Offset(80 * cos(radianMoku), 80 * sin(radianMoku));
-    final centerKa1 = center + Offset(140 * cos(radianKa), 140 * sin(radianKa));
-    final centerKa2 = center + Offset(80 * cos(radianKa), 80 * sin(radianKa));
-    final centerDo1 = center + Offset(140 * cos(radianDo), 140 * sin(radianDo));
-    final centerDo2 = center + Offset(80 * cos(radianDo), 80 * sin(radianDo));
+        center1 + Offset(80 * cos(radianMoku), 80 * sin(radianMoku));
+    final centerKa1 =
+        center1 + Offset(140 * cos(radianKa), 140 * sin(radianKa));
+    final centerKa2 = center1 + Offset(80 * cos(radianKa), 80 * sin(radianKa));
+    final centerDo1 =
+        center1 + Offset(140 * cos(radianDo), 140 * sin(radianDo));
+    final centerDo2 = center1 + Offset(80 * cos(radianDo), 80 * sin(radianDo));
     final centerKin1 =
-        center + Offset(140 * cos(radianKin), 140 * sin(radianKin));
+        center1 + Offset(140 * cos(radianKin), 140 * sin(radianKin));
     final centerKin2 =
-        center + Offset(80 * cos(radianKin), 80 * sin(radianKin));
+        center1 + Offset(80 * cos(radianKin), 80 * sin(radianKin));
     final centerSui1 =
-        center + Offset(140 * cos(radianSui), 140 * sin(radianSui));
+        center1 + Offset(140 * cos(radianSui), 140 * sin(radianSui));
     final centerSui2 =
-        center + Offset(80 * cos(radianSui), 80 * sin(radianSui));
+        center1 + Offset(80 * cos(radianSui), 80 * sin(radianSui));
 
-    canvas.drawCircle(center, radius, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(center1, radius1, penBlue..style = PaintingStyle.stroke);
     // canvas.drawCircle(
-    //     center, radius - 60, penBlue..style = PaintingStyle.stroke);
+    //     center1, radius1 - 60, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(
-        center, radius - 120, penBlue..style = PaintingStyle.stroke);
+        center1, radius1 - 120, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(centerMoku1, 30, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(centerMoku2, 30, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(centerKa1, 30, penBlue..style = PaintingStyle.stroke);
@@ -917,11 +938,16 @@ class ShapePainter1 extends CustomPainter {
     canvas.drawCircle(centerSui1, 30, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(centerSui2, 30, penBlue..style = PaintingStyle.stroke);
 
-    canvas.drawLine(center, line0, penRed); // 赤い中心線
-    canvas.drawLine(center, line1, penWhite);
-    canvas.drawLine(center, line2, penWhite);
+    canvas.drawLine(center1, line0, penRed); // 赤い中心線
+    canvas.drawLine(center1, line1, penWhite);
+    canvas.drawLine(center1, line2, penWhite);
 
-    // Draw green circle
+    // 本質チャートの描画
+    canvas.drawCircle(center2, 40, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(center2, 70, penBlue..style = PaintingStyle.stroke);
+    canvas.drawLine(center2, line20, penRed); // 赤い中心線
+    canvas.drawLine(center2, line21, penWhite);
+    canvas.drawLine(center2, line22, penWhite);
   }
 
   @override
