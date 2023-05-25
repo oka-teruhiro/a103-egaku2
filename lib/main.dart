@@ -50,11 +50,11 @@ class MyApp extends StatelessWidget {
     const int tuS8 = 8; // 水２階数
     const int tuS9 = 9; // 水１階数
     // 天が与える運勢の数の表示色
-    const int godUColor0 = -200000000; // 木地下１階色
-    const int godUColor1 = -200000000; // 火地下1階色
-    const int godUColor2 = -200000000; // 土地下1階色
-    const int godUColor3 = -200000000; // 金地下1階色
-    const int godUColor4 = -200000000; // 水地下1階色
+    const int godUColor0 = c2; // 木地下１階色
+    const int godUColor1 = c2; // 火地下1階色
+    const int godUColor2 = c2; // 土地下1階色
+    const int godUColor3 = c2; // 金地下1階色
+    const int godUColor4 = c2; // 水地下1階色
     // 天が与える運勢の数の表示色
     const int tuGColor0 = c2; // 木3階色
     const int tuGColor1 = c2; // 火3階色
@@ -62,32 +62,32 @@ class MyApp extends StatelessWidget {
     const int tuGColor3 = c2; // 金3階色
     const int tuGColor4 = c2; // 水3階色
     // 通変星の数の表示色
-    const int tuColor0 = -200000000; // 木２階色
-    const int tuColor1 = -200000000; // 木１階色
-    const int tuColor2 = -200000000; // 火２階色
-    const int tuColor3 = -200000000; // 火１階色
-    const int tuColor4 = -200000000; // 土２階色
-    const int tuColor5 = -200000000; // 土１階色
-    const int tuColor6 = -200000000; // 金２階色
-    const int tuColor7 = -200000000; // 金１階色
-    const int tuColor8 = -200000000; // 水２階色
-    const int tuColor9 = -200000000; // 水１階色
+    const int tuColor0 = c2; // 木２階色
+    const int tuColor1 = c2; // 木１階色
+    const int tuColor2 = c2; // 火２階色
+    const int tuColor3 = c2; // 火１階色
+    const int tuColor4 = c2; // 土２階色
+    const int tuColor5 = c2; // 土１階色
+    const int tuColor6 = c2; // 金２階色
+    const int tuColor7 = c2; // 金１階色
+    const int tuColor8 = c2; // 水２階色
+    const int tuColor9 = c2; // 水１階色
     // 通変星の数の表示色
-    const int tuSColor0 = -200000000; // 木２階数色
-    const int tuSColor1 = -200000000; // 木１階数色
-    const int tuSColor2 = -200000000; // 火２階数色
-    const int tuSColor3 = -200000000; // 火１階数色
-    const int tuSColor4 = -200000000; // 土２階数色
-    const int tuSColor5 = -200000000; // 土１階数色
-    const int tuSColor6 = -200000000; // 金２階数色
-    const int tuSColor7 = -200000000; // 金１階数色
-    const int tuSColor8 = -200000000; // 水２階数色
-    const int tuSColor9 = -200000000; // 水１階数色
+    const int tuSColor0 = c2; // 木２階数色
+    const int tuSColor1 = c2; // 木１階数色
+    const int tuSColor2 = c2; // 火２階数色
+    const int tuSColor3 = c2; // 火１階数色
+    const int tuSColor4 = c2; // 土２階数色
+    const int tuSColor5 = c2; // 土１階数色
+    const int tuSColor6 = c2; // 金２階数色
+    const int tuSColor7 = c2; // 金１階数色
+    const int tuSColor8 = c2; // 水２階数色
+    const int tuSColor9 = c2; // 水１階数色
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('命式チャートver.1.0.5'),
+          title: const Text('命式チャートver.1.0.6'),
         ),
         body: Container(
           color: Colors.black,
@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
               children: [
                 CustomPaint(
                   painter: ShapePainter1(),
-                  // size: const Size(400, 400),
+                  // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                 ),
                 //　■■■■■■■■■ 1行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■
                 // Row(
@@ -108,11 +108,12 @@ class MyApp extends StatelessWidget {
                 //     ),
                 //   ],
                 // ),
+                // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     SizedBox(
-                      width: w1 * 9,
+                      width: 20,
                       height: 18,
                     ),
                   ],
@@ -121,13 +122,14 @@ class MyApp extends StatelessWidget {
                 // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     SizedBox(
                       width: 130,
-                      height: h1,
+                      height: 25,
                       child: Center(
                         child: Text(
-                          '1957.03.31生', // ■■■■■■■■■ 生年月日 ■■■■■■■■■
+                          '表面　　　',
                           style: TextStyle(
                             color: Color(c2),
                             fontWeight: FontWeight.bold,
@@ -137,12 +139,12 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 30,
-                      height: h1,
+                      width: 20,
+                      // height: h1,
                     ),
                     SizedBox(
-                      width: w1,
-                      height: h1,
+                      width: 40,
+                      height: 25,
                       child: Center(
                         child: Text(
                           tuG0, // ■■■■■■■■■ 木3階 ■■■■■■■■■
@@ -156,21 +158,21 @@ class MyApp extends StatelessWidget {
                     ),
                     SizedBox(
                       width: 30,
-                      height: h1,
+                      height: 25,
                     ),
                     SizedBox(
                       width: 130,
-                      height: h1,
-                      child: Center(
-                        child: Text(
-                          '2023.05.23今', // ■■■■■■■■■ 測定日 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(c2),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
+                      height: 25,
+                      // child: Center(
+                      //   child: Text(
+                      //     '2023.05.23今', // ■■■■■■■■■ 測定日 ■■■■■■■■■
+                      //     style: TextStyle(
+                      //       color: Color(c2),
+                      //       fontWeight: FontWeight.bold,
+                      //       fontSize: f1,
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                   ],
                 ),
@@ -179,8 +181,8 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     SizedBox(
-                      width: w1 * 9,
-                      height: 13,
+                      width: 20,
+                      height: 10,
                     ),
                   ],
                 ),
@@ -188,13 +190,13 @@ class MyApp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
+                    // SizedBox(
+                    //   width: w1 * 4,
+                    //   height: h1,
+                    // ),
                     SizedBox(
-                      width: w1 * 4,
-                      height: h1,
-                    ),
-                    SizedBox(
-                      width: w1,
-                      height: h1,
+                      width: 40,
+                      height: 25,
                       child: Center(
                         child: Text(
                           tu0, // ■■■■■■■■■ 木2階 ■■■■■■■■■
@@ -206,23 +208,23 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: w1 * 4,
-                      height: h1,
-                    ),
+                    // SizedBox(
+                    //   width: w1 * 4,
+                    //   height: h1,
+                    // ),
                   ],
                 ),
                 // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
+                    // SizedBox(
+                    //   width: w1 * 4,
+                    //   height: h1,
+                    // ),
                     SizedBox(
-                      width: w1 * 4,
-                      height: h1,
-                    ),
-                    SizedBox(
-                      width: w1,
-                      height: h1,
+                      width: 10,
+                      height: 25,
                       child: Center(
                         child: Text(
                           '$tuS0', // ■■■■■■■■■ 木2階数 ■■■■■■■■■
@@ -234,10 +236,10 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: w1 * 4,
-                      height: h1,
-                    ),
+                    // SizedBox(
+                    //   width: w1 * 4,
+                    //   height: h1,
+                    // ),
                   ],
                 ),
                 // ■■■■■■■■■ 6行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■■
@@ -245,8 +247,8 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     SizedBox(
-                      width: w1 * 9,
-                      height: 8,
+                      width: 20,
+                      height: 4,
                     ),
                   ],
                 ),
@@ -256,7 +258,7 @@ class MyApp extends StatelessWidget {
                   children: const [
                     SizedBox(
                       width: 40,
-                      height: h1,
+                      height: 25,
                       child: Center(
                         child: Text(
                           tu1, //■■■■■■■■■ 木１階 ■■■■■■■■■
@@ -273,49 +275,51 @@ class MyApp extends StatelessWidget {
                 // ■■■■■■■■■ 8段目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 SizedBox(
                   width: 386,
-                  height: 120,
+                  height: 84,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // ■■■■■■■■■ 左1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                      // ■■■■■■■■■ 左3列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 20,
-                        height: 120,
-                        child: Center(
-                          child: Column(
-                            children: const [
-                              // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                height: 8,
-                              ),
-                              // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                height: 25,
-                                child: Text(
-                                  tuG4,
-                                  style: TextStyle(
-                                    color: Color(tuGColor4),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
+                        width: 25,
+                        height: 84,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
+                            SizedBox(
+                              height: 0,
+                            ),
+                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                            SizedBox(
+                              height: 24,
+                              child: Text(
+                                tuG4,
+                                style: TextStyle(
+                                  color: Color(tuGColor4),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: f1,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                       // ■■■■■■■■■ 左2列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 58,
-                        height: 120,
+                        width: 52,
+                        height: 84,
                         child: Container(
                           // color: Colors.white54,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: const [
                               // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                               SizedBox(
-                                height: 12,
+                                height: 0,
                               ),
                               // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                               SizedBox(
@@ -351,15 +355,17 @@ class MyApp extends StatelessWidget {
                       ),
                       // ■■■■■■■■■ 左1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 58,
-                        height: 120,
+                        width: 52,
+                        height: 84,
                         child: Container(
                           // color: Colors.white54,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: const [
                               // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                               SizedBox(
-                                height: 30,
+                                height: 16,
                               ),
                               // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                               SizedBox(
@@ -395,179 +401,193 @@ class MyApp extends StatelessWidget {
                       ),
                       // ■■■■■■■■■ 8段目中央 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 94, //94 初期値
-                        height: 120,
-                        child: Column(
-                          children: [
-                            // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              width: w1 * 2,
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  '$tuS1', // ■■■■■■■■■ 木１階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor1),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
+                        width: 62, //94 初期値
+                        height: 84,
+                        child: Container(
+                          // color: Colors.white24,
+                          child: Column(
+                            children: [
+                              // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                width: 18,
+                                height: 25,
+                                child: Center(
+                                  child: Text(
+                                    '$tuS1', // ■■■■■■■■■ 木１階数 ■■■■■■■■■
+                                    style: TextStyle(
+                                      color: Color(tuSColor1),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            // ■■■■■■■■■ 2行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              width: w1 * 2,
-                              height: 12,
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              width: 12,
-                              height: 22,
-                              child: Center(
-                                child: Text(
-                                  '$godU0', // ■■■■■■■■■ 木地下１階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(godUColor0),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
+                              // ■■■■■■■■■ 2行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                width: 20,
+                                height: 0,
+                              ),
+                              // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                width: 12,
+                                height: 19,
+                                child: Center(
+                                  child: Text(
+                                    '$godU0', // ■■■■■■■■■ 木地下１階数 ■■■■■■■■■
+                                    style: TextStyle(
+                                      color: Color(godUColor0),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              width: 94,
-                              height: 25,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const SizedBox(
-                                    width: 12,
-                                    child: Text(
-                                      '$godU4',
-                                      style: TextStyle(
-                                        color: Color(godUColor4),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: f1,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 52,
-                                    child: Container(
-                                        // color: Colors.cyanAccent,
+                              // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              SizedBox(
+                                width: 62,
+                                height: 19,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(
+                                      width: 12,
+                                      child: Center(
+                                        child: Text(
+                                          '$godU4',
+                                          style: TextStyle(
+                                            color: Color(godUColor4),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: f1,
+                                          ),
                                         ),
-                                  ),
-                                  const SizedBox(
-                                    width: 12,
-                                    child: Text(
-                                      '$godU1',
-                                      style: TextStyle(
-                                        color: Color(godUColor1),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: f1,
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              width: 94,
-                              height: 10,
-                            ),
-                            // ■■■■■■■■■ 6行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              width: 94,
-                              height: 25,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const SizedBox(
-                                    width: 12,
-                                    child: Text(
-                                      '$godU3',
-                                      style: TextStyle(
-                                        color: Color(godUColor3),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: f1,
-                                      ),
+                                    SizedBox(
+                                      width: 34,
+                                      child: Container(
+                                          // color: Colors.cyanAccent,
+                                          ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 26,
-                                    child: Container(
-                                        // color: Colors.cyanAccent,
+                                    const SizedBox(
+                                      width: 12,
+                                      child: Center(
+                                        child: Text(
+                                          '$godU1',
+                                          style: TextStyle(
+                                            color: Color(godUColor1),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: f1,
+                                          ),
                                         ),
-                                  ),
-                                  const SizedBox(
-                                    width: 12,
-                                    child: Text(
-                                      '$godU2',
-                                      style: TextStyle(
-                                        color: Color(godUColor2),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: f1,
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                              // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                width: 62,
+                                height: 0,
+                              ),
+                              // ■■■■■■■■■ 6行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              SizedBox(
+                                width: 62,
+                                height: 19,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(
+                                      width: 12,
+                                      child: Center(
+                                        child: Text(
+                                          '$godU3',
+                                          style: TextStyle(
+                                            color: Color(godUColor3),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: f1,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 14,
+                                      child: Container(
+                                          // color: Colors.cyanAccent,
+                                          ),
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                      child: Center(
+                                        child: Text(
+                                          '$godU2',
+                                          style: TextStyle(
+                                            color: Color(godUColor2),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: f1,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       // ■■■■■■■■■ 右1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 58,
-                        height: 120,
-                        child: Column(
-                          children: const [
-                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: 30,
-                            ),
-                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  tu3, // ■■■■■■■■■ 火1階 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuColor3),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
+                        width: 52,
+                        height: 84,
+                        child: Container(
+                          // color: Colors.white24,
+                          child: Column(
+                            children: const [
+                              // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                              SizedBox(
+                                height: 16,
+                              ),
+                              // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              SizedBox(
+                                height: h1,
+                                child: Center(
+                                  child: Text(
+                                    tu3, // ■■■■■■■■■ 火1階 ■■■■■■■■■
+                                    style: TextStyle(
+                                      color: Color(tuColor3),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  '$tuS3', // ■■■■■■■■■ 火1階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor3),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
+                              // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              SizedBox(
+                                height: h1,
+                                child: Center(
+                                  child: Text(
+                                    '$tuS3', // ■■■■■■■■■ 火1階数 ■■■■■■■■■
+                                    style: TextStyle(
+                                      color: Color(tuSColor3),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       // ■■■■■■■■■ 右2列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 58,
-                        height: 120,
+                        width: 52,
+                        height: 84,
                         child: Column(
                           children: const [
                             // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                             SizedBox(
-                              height: 12,
+                              height: 0,
                             ),
                             // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                             SizedBox(
@@ -602,14 +622,16 @@ class MyApp extends StatelessWidget {
                       ),
                       // ■■■■■■■■■ 右3列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                       SizedBox(
-                        width: 20,
-                        height: 120,
+                        width: 25,
+                        height: 84,
                         child: Center(
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: const [
                               // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
                               SizedBox(
-                                height: 8,
+                                height: 0,
                               ),
                               // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                               SizedBox(
@@ -633,6 +655,7 @@ class MyApp extends StatelessWidget {
                 // ■■■■■■■■■ 9行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     SizedBox(
                       width: 40,
@@ -649,7 +672,7 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 54,
+                      width: 30,
                       height: 25,
                     ),
                     SizedBox(
@@ -674,7 +697,7 @@ class MyApp extends StatelessWidget {
                   children: const [
                     SizedBox(
                       width: 40,
-                      height: 25,
+                      height: 19,
                       child: Center(
                         child: Text(
                           '$tuS7', // ■■■■■■■■■ 金1階数 ■■■■■■■■■
@@ -687,12 +710,12 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 54,
-                      height: 25,
+                      width: 30,
+                      height: 19,
                     ),
                     SizedBox(
                       width: 40,
-                      height: 25,
+                      height: 19,
                       child: Center(
                         child: Text(
                           '$tuS5', // ■■■■■■■■■ 土1階数 ■■■■■■■■■
@@ -709,10 +732,11 @@ class MyApp extends StatelessWidget {
                 // ■■■■■■■■■ 11行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     SizedBox(
                       width: 40,
-                      height: 25,
+                      height: 24,
                       child: Center(
                         child: Text(
                           tu6, // ■■■■■■■■■ 金２階 ■■■■■■■■■
@@ -725,12 +749,12 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 124,
-                      height: 25,
+                      width: 90,
+                      height: 19,
                     ),
                     SizedBox(
                       width: 40,
-                      height: 25,
+                      height: 24,
                       child: Center(
                         child: Text(
                           tu4, // ■■■■■■■■■ 土２階 ■■■■■■■■■
@@ -750,7 +774,7 @@ class MyApp extends StatelessWidget {
                   children: const [
                     SizedBox(
                       width: 40,
-                      height: 25,
+                      height: 20,
                       child: Center(
                         child: Text(
                           '$tuS6', // ■■■■■■■■■ 金２階数 ■■■■■■■■■
@@ -763,12 +787,12 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 124,
-                      height: 25,
+                      width: 94,
+                      height: 20,
                     ),
                     SizedBox(
                       width: 40,
-                      height: 25,
+                      height: 20,
                       child: Center(
                         child: Text(
                           '$tuS4', // ■■■■■■■■■ 土２階数 ■■■■■■■■■
@@ -801,7 +825,7 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 190,
+                      width: 140,
                       height: 25,
                     ),
                     SizedBox(
@@ -821,19 +845,19 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
                 // ■■■■■■■■■ 14行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 360,
-                      height: 20,
-                      child: Container(
-                        color: Colors.white24,
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     SizedBox(
+                //       width: 320,
+                //       height: 16,
+                //       child: Container(
+                //         color: Colors.white24,
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 // ■■■■■■■■■ 15行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -841,21 +865,49 @@ class MyApp extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: 180,
-                      height: 180,
+                      height: 196,
                       child: Container(
-                        color: Colors.white10,
+                        // color: Colors.white10,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            const SizedBox(
+                              height: 19,
+                            ),
                             // ■■■■■■■■■ 15行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            const Text(
-                              '木',
-                              style: TextStyle(
-                                color: Color(c2),
-                                fontWeight: FontWeight.bold,
-                                fontSize: f1,
-                              ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                SizedBox(
+                                  width: 80,
+                                  height: 25,
+                                  child: Text(
+                                    '本質　　　　　',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                  height: 25,
+                                  child: Text(
+                                    '木',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 80,
+                                  height: 25,
+                                ),
+                              ],
                             ),
                             // ■■■■■■■■■ 16行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                             const SizedBox(
@@ -1158,10 +1210,421 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 180,
-                      height: 180,
+                      width: 140,
+                      height: 196,
                       child: Container(
-                        color: Colors.white24,
+                        // color: Colors.white24,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              height: 18,
+                              child: Text(
+                                '　　　　　　生年月日',
+                                style: TextStyle(
+                                  color: Color(c2),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                              child: Text(
+                                '1957.03.31　',
+                                style: TextStyle(
+                                  color: Color(c2),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 18,
+                              child: Text(
+                                '　　　　　　　鑑定日',
+                                style: TextStyle(
+                                  color: Color(c2),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                              child: Text(
+                                '2023.05.25　',
+                                style: TextStyle(
+                                  color: Color(c2),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 17,
+                              child: Text(
+                                '年　　月　　日',
+                                style: TextStyle(
+                                  color: Color(c2),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 140,
+                              height: 92,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  SizedBox(
+                                    width: 20,
+                                    child: Container(
+                                      color: Colors.white12,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '−',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            width: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(' '),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(''),
+                                            ),
+                                          ),
+                                          // const SizedBox(
+                                          //   height: 0,
+                                          // ),
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '+',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                    child: Container(
+                                      color: Colors.white12,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '−',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            width: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(' '),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(''),
+                                            ),
+                                          ),
+                                          // const SizedBox(
+                                          //   height: 0,
+                                          // ),
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '+',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                    child: Container(
+                                      color: Colors.white12,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '−',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            width: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(' '),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(''),
+                                            ),
+                                          ),
+                                          // const SizedBox(
+                                          //   height: 0,
+                                          // ),
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '+',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                    child: Container(
+                                      color: Colors.white12,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '−',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            width: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(' '),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(''),
+                                            ),
+                                          ),
+                                          // const SizedBox(
+                                          //   height: 0,
+                                          // ),
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '+',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                    child: Container(
+                                      color: Colors.white12,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '−',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            width: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(' '),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                                shadowColor: Colors.red,
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(''),
+                                            ),
+                                          ),
+                                          // const SizedBox(
+                                          //   height: 0,
+                                          // ),
+                                          const SizedBox(
+                                            height: 18,
+                                            child: Text(
+                                              '+',
+                                              style: TextStyle(
+                                                color: Color(c2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: f1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -1181,13 +1644,9 @@ class ShapePainter1 extends CustomPainter {
     // final center1 = Offset(size.width / 2, size.height / 2);
     // var center1 = const Offset(0, 220); // 最初のオフセット値
     var center1 = const Offset(0, 220 - 30); // 表面の中心座標
-    var center2 = const Offset(-90, 500 - 60); // 本質の中心座標
-    const radius1 = 170.0 - 30.0;
-    const radius2 = 50.0;
-    const lineLength1 = 200.0;
+    var center2 = const Offset(-70, 500 - 60); // 本質の中心座標
+    const lineLength1 = 170.0;
     const lineLength2 = 84.0;
-
-    const lineAngle = 72.0;
 
     final penWhite = Paint()
       ..color = Colors.white
@@ -1201,7 +1660,7 @@ class ShapePainter1 extends CustomPainter {
       ..color = Colors.blue
       ..strokeWidth = 2.0;
 
-    int gogyou = 2; // 五行　0:木 1:火 2:土 3:金 4:水
+    int gogyou = 1; // 五行　0:木 1:火 2:土 3:金 4:水
     double angleMoku = 72 * 0 - 90;
     double angleKa = 72 * 1 - 90;
     double angleDo = 72 * 2 - 90;
