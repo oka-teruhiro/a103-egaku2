@@ -13,8 +13,10 @@ class MyApp extends StatelessWidget {
     const double h1 = 25;
     const double h2 = 90;
     const double f1 = 20;
-    const int c1 = -200000000;
-    const int c2 = -1;
+    const int c1 = -200000000; //暗い緑
+    const int c2 = -1; // 白
+    const int c4 = -1294214; // ピンク
+    const int c3 = -1407770; // ピンク
     // 天が与える運勢
     const int godU0 = 0; // 木地下１階
     const int godU1 = 1; // 火地下１階
@@ -87,7 +89,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('命式チャートver.1.0.6'),
+          title: const Text('命式チャートver.1.0.7'),
         ),
         body: Container(
           color: Colors.black,
@@ -114,7 +116,7 @@ class MyApp extends StatelessWidget {
                   children: const [
                     SizedBox(
                       width: 20,
-                      height: 18,
+                      height: 4,
                     ),
                   ],
                 ),
@@ -129,11 +131,11 @@ class MyApp extends StatelessWidget {
                       height: 25,
                       child: Center(
                         child: Text(
-                          '表面　　　',
+                          '表面　　　　　',
                           style: TextStyle(
-                            color: Color(c2),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
+                            color: Color(c3),
+                            fontWeight: FontWeight.normal,
+                            fontSize: 16,
                           ),
                         ),
                       ),
@@ -865,7 +867,7 @@ class MyApp extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: 180,
-                      height: 196,
+                      height: 194,
                       child: Container(
                         // color: Colors.white10,
                         child: Column(
@@ -883,11 +885,11 @@ class MyApp extends StatelessWidget {
                                   width: 80,
                                   height: 25,
                                   child: Text(
-                                    '本質　　　　　',
+                                    '本質　　　　　　',
                                     style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: f1,
+                                      color: Color(c3),
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -897,7 +899,7 @@ class MyApp extends StatelessWidget {
                                   child: Text(
                                     '木',
                                     style: TextStyle(
-                                      color: Color(c2),
+                                      color: Colors.teal,
                                       fontWeight: FontWeight.bold,
                                       fontSize: f1,
                                     ),
@@ -939,7 +941,7 @@ class MyApp extends StatelessWidget {
                                         child: Text(
                                           '水',
                                           style: TextStyle(
-                                            color: Color(c2),
+                                            color: Colors.white38,
                                             fontWeight: FontWeight.bold,
                                             fontSize: f1,
                                           ),
@@ -1074,7 +1076,7 @@ class MyApp extends StatelessWidget {
                                   child: Center(
                                     child: Text('火',
                                         style: TextStyle(
-                                          color: Color(c2),
+                                          color: Colors.red,
                                           fontWeight: FontWeight.bold,
                                           fontSize: f1,
                                         )),
@@ -1178,7 +1180,7 @@ class MyApp extends StatelessWidget {
                                     child: Text(
                                       '金',
                                       style: TextStyle(
-                                        color: Color(c2),
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontSize: f1,
                                       ),
@@ -1196,7 +1198,7 @@ class MyApp extends StatelessWidget {
                                     child: Text(
                                       '土',
                                       style: TextStyle(
-                                        color: Color(c2),
+                                        color: Colors.yellowAccent,
                                         fontWeight: FontWeight.bold,
                                         fontSize: f1,
                                       ),
@@ -1211,7 +1213,7 @@ class MyApp extends StatelessWidget {
                     ),
                     SizedBox(
                       width: 140,
-                      height: 196,
+                      height: 194,
                       child: Container(
                         // color: Colors.white24,
                         child: Column(
@@ -1223,20 +1225,20 @@ class MyApp extends StatelessWidget {
                               child: Text(
                                 '　　　　　　生年月日',
                                 style: TextStyle(
-                                  color: Color(c2),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
+                                  color: Color(c3),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
                                 ),
                               ),
                             ),
                             const SizedBox(
-                              height: 25,
+                              height: 21,
                               child: Text(
                                 '1957.03.31　',
                                 style: TextStyle(
                                   color: Color(c2),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                 ),
                               ),
                             ),
@@ -1245,9 +1247,9 @@ class MyApp extends StatelessWidget {
                               child: Text(
                                 '　　　　　　　鑑定日',
                                 style: TextStyle(
-                                  color: Color(c2),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
+                                  color: Color(c3),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
                                 ),
                               ),
                             ),
@@ -1258,18 +1260,18 @@ class MyApp extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(c2),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                 ),
                               ),
                             ),
                             const SizedBox(
-                              height: 17,
+                              height: 15,
                               child: Text(
                                 '年　　月　　日',
                                 style: TextStyle(
-                                  color: Color(c2),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13,
+                                  color: Color(c3),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
                                 ),
                               ),
                             ),
@@ -1283,7 +1285,7 @@ class MyApp extends StatelessWidget {
                                   SizedBox(
                                     width: 20,
                                     child: Container(
-                                      color: Colors.white12,
+                                      // color: Colors.white12,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1309,7 +1311,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 0,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(' '),
@@ -1324,7 +1326,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 16,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(''),
@@ -1351,7 +1353,7 @@ class MyApp extends StatelessWidget {
                                   SizedBox(
                                     width: 20,
                                     child: Container(
-                                      color: Colors.white12,
+                                      // color: Colors.white12,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1377,7 +1379,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 0,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(' '),
@@ -1392,7 +1394,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 16,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(''),
@@ -1419,7 +1421,7 @@ class MyApp extends StatelessWidget {
                                   SizedBox(
                                     width: 20,
                                     child: Container(
-                                      color: Colors.white12,
+                                      // color: Colors.white12,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1445,7 +1447,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 0,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(' '),
@@ -1460,7 +1462,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 16,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(''),
@@ -1487,7 +1489,7 @@ class MyApp extends StatelessWidget {
                                   SizedBox(
                                     width: 20,
                                     child: Container(
-                                      color: Colors.white12,
+                                      // color: Colors.white12,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1513,7 +1515,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 0,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(' '),
@@ -1528,7 +1530,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 16,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(''),
@@ -1555,7 +1557,7 @@ class MyApp extends StatelessWidget {
                                   SizedBox(
                                     width: 20,
                                     child: Container(
-                                      color: Colors.white12,
+                                      // color: Colors.white12,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1581,7 +1583,7 @@ class MyApp extends StatelessWidget {
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
                                                 elevation: 0,
-                                                shadowColor: Colors.red,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(' '),
@@ -1595,8 +1597,8 @@ class MyApp extends StatelessWidget {
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.blue,
-                                                elevation: 16,
-                                                shadowColor: Colors.red,
+                                                elevation: 0,
+                                                // shadowColor: Colors.red,
                                               ),
                                               onPressed: () {},
                                               child: const Text(''),
@@ -1643,8 +1645,8 @@ class ShapePainter1 extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // final center1 = Offset(size.width / 2, size.height / 2);
     // var center1 = const Offset(0, 220); // 最初のオフセット値
-    var center1 = const Offset(0, 220 - 30); // 表面の中心座標
-    var center2 = const Offset(-70, 500 - 60); // 本質の中心座標
+    var center1 = const Offset(0, 220 - 30 - 14); // 表面の中心座標
+    var center2 = const Offset(-70, 500 - 60 - 14); // 本質の中心座標
     const lineLength1 = 170.0;
     const lineLength2 = 84.0;
 
@@ -1707,7 +1709,7 @@ class ShapePainter1 extends CustomPainter {
         center1 + Offset(59 * cos(radianSui), 59 * sin(radianSui));
 
     canvas.drawCircle(center1, 140, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(center1, 86, penBlue..style = PaintingStyle.stroke);
+    // canvas.drawCircle(center1, 86, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(center1, 32, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(centerMoku1, 27, penBlue..style = PaintingStyle.stroke);
     canvas.drawCircle(centerMoku2, 27, penBlue..style = PaintingStyle.stroke);
